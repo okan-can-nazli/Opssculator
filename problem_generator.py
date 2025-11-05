@@ -54,3 +54,43 @@ def is_correct(problem, answer):  # solution checker
     return answer == correct_answer
 
 
+
+
+# Addition (+) = 0, Subtraction (-) = 1, Multiplacation (*) = 2, Division (/) = 3
+
+def problem_to_state(problem):
+    num1_str, operation, num2_str = problem.split(" ")
+    num1_state = int(num1_str)
+    num2_state = int(num2_str)
+    
+    match operation:
+        case "+":
+            operation_state = 0
+        
+        case "-":
+            operation_state = 1
+            
+        case "*":
+            operation_state = 2
+        
+        case "/":
+            operation_state = 3
+
+        case _:
+            print("Unable to state the operation!")
+            sys.exit(0)
+        
+    return [num1_state, operation_state, num2_state]
+
+
+# Test all operations
+problems = [
+    "5 + 3",
+    "8 - 2", 
+    "4 * 7",
+    "6 / 3"
+]
+
+for p in problems:
+    state = problem_to_state(p)
+    print(f"{p} → {state}")
