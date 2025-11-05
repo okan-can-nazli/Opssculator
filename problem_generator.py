@@ -81,16 +81,3 @@ def problem_to_state(problem):
             sys.exit(0)
         
     return [num1_state, operation_state, num2_state]
-
-
-# Test all operations
-problems = [
-    "5 + 3",
-    "8 - 2", 
-    "4 * 7",
-    "6 / 3"
-]
-
-for p in problems:
-    state = problem_to_state(p)
-    print(f"{p} → {state}")
